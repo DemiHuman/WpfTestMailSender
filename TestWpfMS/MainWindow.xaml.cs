@@ -24,5 +24,10 @@ namespace TestWpfMS
         {
             InitializeComponent();
         }
+
+        private void SendButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

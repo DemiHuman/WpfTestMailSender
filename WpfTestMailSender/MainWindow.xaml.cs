@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net;
+using System.Net.Mail;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace WpfTestMailSender
+namespace WpfMailSender
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,6 +12,20 @@ namespace WpfTestMailSender
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void SendButton_Click(object sender, RoutedEventArgs e)
+        {
+            var from = new MailAddress("test@mail.ru", "TestName");
+            var to = new MailAddress("test2@mail.ru", "TestName2");
+
+            var message = new MailMessage(from, to);
+            message.Subject = tbSubjectMail.Text;
+            message.Body = tbBodyMail.Text;
+
+            EmailSendServiceClass sendMail = new EmailSendServiceClass();
+            sendMail.SendMeil(ConfigMailServerClass.Host, ConfigMailServerClass.Port, tbLogin.Text, pasBox.SecurePassword, message);
+
         }
     }
 }

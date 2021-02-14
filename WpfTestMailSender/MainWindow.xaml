@@ -1,12 +1,21 @@
-﻿<Window x:Class="WpfTestMailSender.MainWindow"
+﻿<Window x:Class="WpfMailSender.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTestMailSender"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="179" Width="459">
+    <Grid HorizontalAlignment="Left" Width="475" Height="216" VerticalAlignment="Top" Margin="8,1,0,0">
+        <TextBox x:Name="tbLogin" HorizontalAlignment="Left" Margin="10,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnSendMail" Content="Отправить" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Width="120" Click="SendButton_Click"/>
+        <TextBlock x:Name="tbkLogin" HorizontalAlignment="Left" Margin="10,5,0,0" Text="Логин" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TbkPassword" HorizontalAlignment="Left" Margin="10,51,0,0" Text="Пароль" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="pasBox" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbSubjectMail" HorizontalAlignment="Left" Margin="178,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240"/>
+        <TextBox x:Name="tbBodyMail" HorizontalAlignment="Left" Margin="178,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" Height="53"/>
+        <TextBlock x:Name="tbkSubjectMail" HorizontalAlignment="Left" Margin="178,8,0,0" Text="Тема письма" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tbkBodyMail" HorizontalAlignment="Left" Margin="178,54,0,0" Text="Текст" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
