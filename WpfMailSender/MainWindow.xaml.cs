@@ -20,8 +20,8 @@ namespace WpfMailSender
             //var from = new MailAddress("@gmail.com", "Test!!!");
             //var to = new MailAddress("@yandex.ru");
 
-            var from = new MailAddress("@yandex.ru", "Test!!!");
-            var to = new MailAddress("@gmail.com");
+            var from = new MailAddress("test@yandex.ru", "Test!!!");
+            var to = new MailAddress("test@gmail.com");
 
             var message = new MailMessage(from, to);
             message.Subject = tbSubjectMail.Text;
