@@ -16,8 +16,12 @@ namespace WpfMailSender
 
         private void SendButton_Click(object sender, RoutedEventArgs e)
         {
-            var from = new MailAddress("test@mail.ru", "TestName");
-            var to = new MailAddress("test2@mail.ru", "TestName2");
+
+            //var from = new MailAddress("@gmail.com", "Test!!!");
+            //var to = new MailAddress("@yandex.ru");
+
+            var from = new MailAddress("@yandex.ru", "Test!!!");
+            var to = new MailAddress("@gmail.com");
 
             var message = new MailMessage(from, to);
             message.Subject = tbSubjectMail.Text;

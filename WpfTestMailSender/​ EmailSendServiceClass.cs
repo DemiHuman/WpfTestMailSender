@@ -17,8 +17,9 @@ namespace WpfMailSender
         public void SendMeil(string host, int port, string login, SecureString password, MailMessage message)
         {
 
-            var client = new SmtpClient(ConfigMailServerClass.Host, ConfigMailServerClass.Port);
+            var client = new SmtpClient(host, port);
             client.EnableSsl = true;
+            client.Timeout = 3000;
 
             client.Credentials = new NetworkCredential
             {
@@ -34,8 +35,6 @@ namespace WpfMailSender
             }
             catch (SmtpException)
             {
-
-                string text = "somthing text";
                 MessageBox.Show("Ошибка авторизации", "Ошибка отправки почты", MessageBoxButton.OK,
                     MessageBoxImage.Warning);
             }

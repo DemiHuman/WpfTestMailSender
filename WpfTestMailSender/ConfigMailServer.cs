@@ -9,6 +9,6 @@ namespace WpfMailSender
     public static class ConfigMailServerClass
     {
         public static string Host = "​smtp.yandex.ru";
-        public static int Port = 25;
+        public static int Port = 465;
     }
 }
