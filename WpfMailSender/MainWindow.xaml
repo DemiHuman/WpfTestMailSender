@@ -4,7 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:imgSource="http://schemas.fontawesome.com/icons/"
-        xmlns:local="clr-namespace:WpfTestMailSender"
+        xmlns:local="clr-namespace:WpfMailSender"
+        xmlns:data="clr-namespace:WpfMailSender.Data"
+        xmlns:m="clr-namespace:WpfMailSender.Models"
         mc:Ignorable="d"
         Title="MainWindow" Height="391" Width="558">
     <DockPanel>
@@ -31,22 +33,16 @@
                     </Grid.RowDefinitions>
                     <ToolBarTray Grid.Row="0">
                         <ToolBar Header="Сервера">
-                            <ComboBox MinWidth="90" MaxWidth="140" SelectedIndex="0">
-                                <ComboBoxItem>smtp.yandex.ru:587</ComboBoxItem>
-                                <ComboBoxItem>smtp.gmail.com</ComboBoxItem>
-                                <ComboBoxItem>smtp.mail.ru</ComboBoxItem>
-                            </ComboBox>
+                            <ComboBox MinWidth="90" MaxWidth="140" SelectedIndex="0" 
+                                      ItemsSource="{x:Static data:TestData.Servers}"/>
 
                             <Button ToolTip="Добавить" imgSource:Awesome.Content="Solid_PlusCircle"/>
                             <Button ToolTip="Редактировать" imgSource:Awesome.Content="Solid_Edit"/>
                             <Button ToolTip="Удалить" imgSource:Awesome.Content="Regular_TrashAlt"/>
                         </ToolBar>
                         <ToolBar Header="Отправители" Band="1" BandIndex="0">
-                            <ComboBox MinWidth="90" MaxWidth="140" SelectedIndex="0">
-                                <ComboBoxItem>Иванов:ivanov@mail.ru</ComboBoxItem>
-                                <ComboBoxItem>Петров:petrov@mail.ru</ComboBoxItem>
-                                <ComboBoxItem>Сидоров:sidorov@mail.ru</ComboBoxItem>
-                            </ComboBox>
+                            <ComboBox MinWidth="90" MaxWidth="140" SelectedIndex="0" 
+                                      ItemsSource="{x:Static data:TestData.Senders}"/>
 
                             <Button Content="Добавить"/>
                             <Button Content="Удалить"/>
