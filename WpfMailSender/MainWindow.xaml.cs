@@ -20,15 +20,15 @@ namespace WpfMailSender
             //var from = new MailAddress("@gmail.com", "Test!!!");
             //var to = new MailAddress("@yandex.ru");
 
-            var from = new MailAddress("test@yandex.ru", "Test!!!");
-            var to = new MailAddress("test@gmail.com");
+            //var from = new MailAddress("test@yandex.ru", "Test!!!");
+            //var to = new MailAddress("test@gmail.com");
 
-            var message = new MailMessage(from, to);
-            message.Subject = tbSubjectMail.Text;
-            message.Body = tbBodyMail.Text;
+            //var message = new MailMessage(from, to);
+            //message.Subject = tbSubjectMail.Text;
+            //message.Body = tbBodyMail.Text;
 
-            EmailSendServiceClass sendMail = new EmailSendServiceClass();
-            sendMail.SendMeil(ConfigMailServerClass.Host, ConfigMailServerClass.Port, tbLogin.Text, pasBox.SecurePassword, message);
+            //EmailSendServiceClass sendMail = new EmailSendServiceClass();
+            //sendMail.SendMeil(ConfigMailServerClass.Host, ConfigMailServerClass.Port, tbLogin.Text, pasBox.SecurePassword, message);
 
         }
     }

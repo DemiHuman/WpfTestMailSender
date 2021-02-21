@@ -56,14 +56,18 @@
                         </ToolBar>
                     </ToolBarTray>
 
-                    <DataGrid Grid.Row="1">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="ID"/>
-                            <DataGridTextColumn Header="Имя" MinWidth="120"/>
-                            <DataGridTextColumn Header="Адрес" MinWidth="150"/>
-                            <DataGridTextColumn Header="Описание" Width="*"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
+
+                    <GroupBox Header="Список получателей" Margin="1" Grid.Row="1">
+                        <DataGrid>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ID"/>
+                                <DataGridTextColumn Header="Имя" MinWidth="120"/>
+                                <DataGridTextColumn Header="Адрес" MinWidth="150"/>
+                                <DataGridTextColumn Header="Описание" Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
+                    
                 </Grid>
             </TabItem>
             <TabItem Header="Планировщик"></TabItem>
