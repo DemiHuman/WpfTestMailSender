@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTestMailSender"
         mc:Ignorable="d"
-        Title="MainWindow" Height="190" Width="459">
+        Title="MainWindow" Height="274" Width="548">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
@@ -22,7 +22,41 @@
         </StatusBar>
 
         <TabControl>
-            <TabItem Header="Списки"></TabItem>
+            <TabItem Header="Списки">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <ToolBarTray Grid.Row="0">
+                        <ToolBar Header="Сервера">
+                            <ComboBox MinWidth="90" MaxWidth="140" SelectedIndex="0">
+                                <ComboBoxItem>smtp.yandex.ru:587</ComboBoxItem>
+                                <ComboBoxItem>smtp.gmail.com</ComboBoxItem>
+                                <ComboBoxItem>smtp.mail.ru</ComboBoxItem>
+                            </ComboBox>
+
+                            <Button Content="Добавить"/>
+                            <Button Content="Удалить"/>
+                            <Button Content="Редактировать"/>
+                        </ToolBar>
+                        <ToolBar Header="Отправители" Band="1" BandIndex="0">
+                            <ComboBox MinWidth="90" MaxWidth="140" SelectedIndex="0">
+                                <ComboBoxItem>Иванов:ivanov@mail.ru</ComboBoxItem>
+                                <ComboBoxItem>Петров:petrov@mail.ru</ComboBoxItem>
+                                <ComboBoxItem>Сидоров:sidorov@mail.ru</ComboBoxItem>
+                            </ComboBox>
+
+                            <Button Content="Добавить"/>
+                            <Button Content="Удалить"/>
+                            <Button Content="Редактировать"/>
+                        </ToolBar>
+                        <ToolBar Header="Планировщик">
+                            <Button Content="Запланировать"></Button>
+                        </ToolBar>
+                    </ToolBarTray>
+                </Grid>
+            </TabItem>
             <TabItem Header="Планировщик"></TabItem>
             <TabItem Header="Письма"></TabItem>
             <TabItem Header="Статистика"></TabItem>
