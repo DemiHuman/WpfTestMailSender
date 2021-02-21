@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:imgSource="http://schemas.fontawesome.com/icons/"
         xmlns:local="clr-namespace:WpfTestMailSender"
         mc:Ignorable="d"
         Title="MainWindow" Height="391" Width="558">
@@ -36,9 +37,9 @@
                                 <ComboBoxItem>smtp.mail.ru</ComboBoxItem>
                             </ComboBox>
 
-                            <Button Content="Добавить"/>
-                            <Button Content="Удалить"/>
-                            <Button Content="Редактировать"/>
+                            <Button ToolTip="Добавить" imgSource:Awesome.Content="Solid_PlusCircle"/>
+                            <Button ToolTip="Редактировать" imgSource:Awesome.Content="Solid_Edit"/>
+                            <Button ToolTip="Удалить" imgSource:Awesome.Content="Regular_TrashAlt"/>
                         </ToolBar>
                         <ToolBar Header="Отправители" Band="1" BandIndex="0">
                             <ComboBox MinWidth="90" MaxWidth="140" SelectedIndex="0">
@@ -102,7 +103,7 @@
                                         <Button VerticalAlignment="Top"
                                                 HorizontalAlignment="Right"
                                                 Padding="5,0"
-                                                Background="DarkRed"
+                                                Background="Gray"
                                                 ToolTip="Удалить"
                                                 Content="x"/>
                                     </Grid>
@@ -121,7 +122,7 @@
                                         <Button VerticalAlignment="Top"
                                                 HorizontalAlignment="Right"
                                                 Padding="5,0"
-                                                Background="DarkRed"
+                                                Background="Gray"
                                                 ToolTip="Удалить"
                                                 Content="x"/>
                                     </Grid>
@@ -176,10 +177,6 @@
                                         <Setter Property="FontWeight" Value="Bold"/>
                                         <Setter Property="HorizontalAlignment" Value="Right"/>
                                         <Setter Property="Margin" Value="0,5,5,0"/>
-                                        <Setter Property="Foreground"  Value="WhiteSmoke"/>
-                                    </Trigger>
-                                    <Trigger Property="Grid.Column" Value="1">
-                                        <Setter Property="Foreground"  Value="WhiteSmoke"/>
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>

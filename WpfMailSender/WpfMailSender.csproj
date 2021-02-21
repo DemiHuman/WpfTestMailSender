@@ -8,4 +8,12 @@
     <RootNamespace>WpfMailSender</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\img\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome5" Version="2.1.0" />
+  </ItemGroup>
+
 </Project>
