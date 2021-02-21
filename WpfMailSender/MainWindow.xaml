@@ -55,6 +55,15 @@
                             <Button Content="Запланировать"></Button>
                         </ToolBar>
                     </ToolBarTray>
+
+                    <DataGrid Grid.Row="1">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID"/>
+                            <DataGridTextColumn Header="Имя" MinWidth="120"/>
+                            <DataGridTextColumn Header="Адрес" MinWidth="150"/>
+                            <DataGridTextColumn Header="Описание" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
             </TabItem>
             <TabItem Header="Планировщик"></TabItem>
