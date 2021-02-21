@@ -136,7 +136,31 @@
                                   Foreground="Transparent"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Письма"></TabItem>
+            <TabItem Header="Письма">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" MinWidth="120"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <GroupBox Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Header="Письма">
+                        <ListBox>
+                            <ListBoxItem>Письмо1</ListBoxItem>
+                            <ListBoxItem>Письмо2</ListBoxItem>
+                            <ListBoxItem>Письмо3</ListBoxItem>
+                        </ListBox>
+                    </GroupBox>
+                    <GroupBox Grid.Column="1" Grid.Row="0" Header="Заголовок">
+                        <TextBox/>
+                    </GroupBox>
+                    <GroupBox Grid.Column="1" Grid.Row="1" Header="Тело письма">
+                        <TextBox AcceptsReturn="True" AcceptsTab="True"/>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
             <TabItem Header="Статистика"></TabItem>
         </TabControl>
     </DockPanel>
