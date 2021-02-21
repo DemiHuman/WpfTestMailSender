@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTestMailSender"
         mc:Ignorable="d"
-        Title="MainWindow" Height="274" Width="548">
+        Title="MainWindow" Height="391" Width="558">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
@@ -67,10 +67,75 @@
                             </DataGrid.Columns>
                         </DataGrid>
                     </GroupBox>
-                    
+
                 </Grid>
             </TabItem>
-            <TabItem Header="Планировщик"></TabItem>
+            <TabItem Header="Планировщик">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <GroupBox Grid.Column="0" Header="Планирование">
+                        <StackPanel>
+                            <TextBlock Text="Дата задания" HorizontalAlignment="Center"/>
+                            <Calendar/>
+                            <UniformGrid Columns="1" Margin="5">
+                                <Button Content="Запланировать"/>
+                                <Button Content="Отправить сейчас"/>
+                            </UniformGrid>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Grid.Column="1" Header="Задания">
+                        <ListBox>
+                            <ListBoxItem HorizontalContentAlignment="Stretch">
+                                <Border BorderBrush="WhiteSmoke" BorderThickness="1"
+                                        Padding="4" CornerRadius="4">
+                                    <Grid>
+                                        <StackPanel>
+                                            <TextBlock Text="Время: 04.05.2021"/>
+                                            <TextBlock Text="Отправитель: admin"/>
+                                            <TextBlock Text="Получатель: user"/>
+                                            <TextBlock Text="Письмо: Test"/>
+                                        </StackPanel>
+                                        <Button VerticalAlignment="Top"
+                                                HorizontalAlignment="Right"
+                                                Padding="5,0"
+                                                Background="DarkRed"
+                                                ToolTip="Удалить"
+                                                Content="x"/>
+                                    </Grid>
+                                </Border>
+                            </ListBoxItem>
+                            <ListBoxItem HorizontalContentAlignment="Stretch">
+                                <Border BorderBrush="WhiteSmoke" BorderThickness="1"
+                                        Padding="4" CornerRadius="4">
+                                    <Grid>
+                                        <StackPanel>
+                                            <TextBlock Text="Время: 04.05.2021"/>
+                                            <TextBlock Text="Отправитель: admin"/>
+                                            <TextBlock Text="Получатель: user"/>
+                                            <TextBlock Text="Письмо: Test"/>
+                                        </StackPanel>
+                                        <Button VerticalAlignment="Top"
+                                                HorizontalAlignment="Right"
+                                                Padding="5,0"
+                                                Background="DarkRed"
+                                                ToolTip="Удалить"
+                                                Content="x"/>
+                                    </Grid>
+                                </Border>
+                            </ListBoxItem>
+                        </ListBox>
+                    </GroupBox>
+                    <GridSplitter Grid.Column="0"
+                                  VerticalAlignment="Stretch"
+                                  HorizontalContentAlignment="Right"
+                                  Width="3"
+                                  Foreground="Transparent"/>
+                </Grid>
+            </TabItem>
             <TabItem Header="Письма"></TabItem>
             <TabItem Header="Статистика"></TabItem>
         </TabControl>
