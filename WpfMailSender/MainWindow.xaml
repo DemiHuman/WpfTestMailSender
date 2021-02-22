@@ -38,6 +38,7 @@
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <TextBlock>
+                                            Сервер: <TextBlock Text="{Binding Name}"/>
                                             <TextBlock.ToolTip>
                                                 <TextBlock>
                                                     Адрес:
@@ -46,7 +47,6 @@
                                                     <TextBlock Text="{Binding Port}"/>
                                                 </TextBlock>
                                             </TextBlock.ToolTip>
-                                            Сервер: <TextBlock Text="{Binding Name}"/>
                                         </TextBlock>
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
