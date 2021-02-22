@@ -34,7 +34,23 @@
                     <ToolBarTray Grid.Row="0">
                         <ToolBar Header="Сервера">
                             <ComboBox MinWidth="90" MaxWidth="140" SelectedIndex="0" 
-                                      ItemsSource="{x:Static data:TestData.Servers}"/>
+                                      ItemsSource="{x:Static data:TestData.Servers}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock>
+                                            <TextBlock.ToolTip>
+                                                <TextBlock>
+                                                    Адрес:
+                                                    <TextBlock Text="{Binding Address}"/>;
+                                                    Порт:
+                                                    <TextBlock Text="{Binding Port}"/>
+                                                </TextBlock>
+                                            </TextBlock.ToolTip>
+                                            Сервер: <TextBlock Text="{Binding Name}"/>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
 
                             <Button ToolTip="Добавить" imgSource:Awesome.Content="Solid_PlusCircle"/>
                             <Button ToolTip="Редактировать" imgSource:Awesome.Content="Solid_Edit"/>

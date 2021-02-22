@@ -10,5 +10,7 @@
         public string Login { get; set; }
         public string Password { get; set; }
         public string Description { get; set; }
+
+        public override string ToString() => $"Server:{Address}; Port:{Port}; SSL:{UseSSL}";
     }
 }
