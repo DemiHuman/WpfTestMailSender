@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:imgSource="http://schemas.fontawesome.com/icons/"
         xmlns:local="clr-namespace:WpfMailSender"
+        xmlns:controls="clr-namespace:WpfMailSender.Controls"
         xmlns:data="clr-namespace:WpfMailSender.Data"
         xmlns:m="clr-namespace:WpfMailSender.Models"
         mc:Ignorable="d"
@@ -55,6 +56,9 @@
                             <Button ToolTip="Добавить" imgSource:Awesome.Content="Solid_Plus"/>
                             <Button ToolTip="Редактировать" imgSource:Awesome.Content="Solid_Edit"/>
                             <Button ToolTip="Удалить" imgSource:Awesome.Content="Regular_TrashAlt"/>
+                        </ToolBar>
+                        <ToolBar Band="2">
+                            <controls:ItemsPanel Title="Server"/>
                         </ToolBar>
                         <ToolBar Header="Отправители" Band="1" BandIndex="0">
                             <ComboBox Name="SenderList" MinWidth="90" MaxWidth="200" SelectedIndex="0" 
