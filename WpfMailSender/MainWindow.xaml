@@ -58,8 +58,10 @@
                             <Button ToolTip="Удалить" imgSource:Awesome.Content="Regular_TrashAlt"/>
                         </ToolBar>
                         <ToolBar Band="2">
-                            <controls:ItemsPanel Title="Server"/>
+                            <controls:ItemsPanel Title="{Binding Text, ElementName=Test}"/>
+                            <!--<TextBox Name="Test" Text="fgf"/>-->
                         </ToolBar>
+
                         <ToolBar Header="Отправители" Band="1" BandIndex="0">
                             <ComboBox Name="SenderList" MinWidth="90" MaxWidth="200" SelectedIndex="0" 
                                       ItemsSource="{x:Static data:TestData.Senders}">

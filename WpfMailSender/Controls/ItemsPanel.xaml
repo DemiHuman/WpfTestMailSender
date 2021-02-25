@@ -8,8 +8,9 @@
              xmlns:data="clr-namespace:WpfMailSender.Data"
              mc:Ignorable="d" 
              Height="27" Width="300">
-    <DockPanel Margin="0,0,-8,0">
-        <TextBlock Text="Название" VerticalAlignment="Center" Name="Header"/>
+    <DockPanel>
+        <TextBlock Text="{Binding Title, RelativeSource={RelativeSource AncestorType=l:ItemsPanel}}" 
+                   VerticalAlignment="Center" Margin="3,0"/>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
             <StackPanel.Resources>
                 <Style TargetType="Button">
