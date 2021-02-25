@@ -3,9 +3,9 @@ using System.Net;
 using System.Net.Mail;
 using System.Windows;
 
-namespace WpfMailSender.Services
+namespace MailSender.lib
 {
-    public class SmtpSender
+    public class SmtpSenderService
     {
 
         private readonly string _Address;
@@ -14,7 +14,7 @@ namespace WpfMailSender.Services
         private readonly string _Login;
         private readonly string _Password;
 
-        public SmtpSender(string address, int port, bool useSsl, string login, string password)
+        public SmtpSenderService(string address, int port, bool useSsl, string login, string password)
         {
             _Address = address;
             _Port = port;
