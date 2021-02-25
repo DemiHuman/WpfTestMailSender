@@ -4,6 +4,7 @@ using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MailSender.lib.Service;
 using WpfMailSender.Models;
 
 namespace WpfMailSender.Data
@@ -17,7 +18,7 @@ namespace WpfMailSender.Data
                 Address = $"smpt.server{i}.ru",
                 UseSSL = i % 2 == 0,
                 Login = "user@yandex.ru",
-                Password = "PassWord",
+                Password = TextEncoder.Encode($"Password-{i}",7),
                 Description = $"This is server {i}",
                 Name = $"Server {i}"
 

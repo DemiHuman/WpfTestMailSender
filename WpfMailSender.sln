@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfMailSender", "WpfMailSen
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{E78ECA3A-7953-490B-B474-3EF251BA28F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTestWPF", "ConsoleTestWPF\ConsoleTestWPF.csproj", "{3874D00A-6D3F-4361-99E7-3D488D01E05C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTestWPF", "ConsoleTestWPF\ConsoleTestWPF.csproj", "{3874D00A-6D3F-4361-99E7-3D488D01E05C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWpf", "TestWpf\TestWpf.csproj", "{8944F495-D80A-45D2-B101-30DE944B14C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWpf", "TestWpf\TestWpf.csproj", "{8944F495-D80A-45D2-B101-30DE944B14C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender.lib", "MailSender.lib\MailSender.lib.csproj", "{711C9972-CC95-436C-B13D-78ABA9DE8CBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{8944F495-D80A-45D2-B101-30DE944B14C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8944F495-D80A-45D2-B101-30DE944B14C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8944F495-D80A-45D2-B101-30DE944B14C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{711C9972-CC95-436C-B13D-78ABA9DE8CBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{711C9972-CC95-436C-B13D-78ABA9DE8CBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{711C9972-CC95-436C-B13D-78ABA9DE8CBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{711C9972-CC95-436C-B13D-78ABA9DE8CBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
