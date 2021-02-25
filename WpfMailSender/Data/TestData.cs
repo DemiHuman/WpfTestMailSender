@@ -47,7 +47,7 @@ namespace WpfMailSender.Data
             .Select(i => new Message
             {
                 Id = i,
-                Tittle = $"Сообщение {i}",
+                Title = $"Сообщение {i}",
                 Body = $"Текст сообщения {i}"
 
             }).ToList();

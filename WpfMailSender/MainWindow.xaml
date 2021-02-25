@@ -33,7 +33,7 @@
                     </Grid.RowDefinitions>
                     <ToolBarTray Grid.Row="0">
                         <ToolBar Header="Сервера">
-                            <ComboBox MinWidth="90" MaxWidth="140" SelectedIndex="0" 
+                            <ComboBox Name="ServersList" MinWidth="90" MaxWidth="140" SelectedIndex="0" 
                                       ItemsSource="{x:Static data:TestData.Servers}">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
@@ -52,31 +52,45 @@
                                 </ComboBox.ItemTemplate>
                             </ComboBox>
 
-                            <Button ToolTip="Добавить" imgSource:Awesome.Content="Solid_PlusCircle"/>
+                            <Button ToolTip="Добавить" imgSource:Awesome.Content="Solid_Plus"/>
                             <Button ToolTip="Редактировать" imgSource:Awesome.Content="Solid_Edit"/>
                             <Button ToolTip="Удалить" imgSource:Awesome.Content="Regular_TrashAlt"/>
                         </ToolBar>
                         <ToolBar Header="Отправители" Band="1" BandIndex="0">
-                            <ComboBox MinWidth="90" MaxWidth="140" SelectedIndex="0" 
-                                      ItemsSource="{x:Static data:TestData.Senders}"/>
+                            <ComboBox Name="SenderList" MinWidth="90" MaxWidth="200" SelectedIndex="0" 
+                                      ItemsSource="{x:Static data:TestData.Senders}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock  ToolTip="{Binding Description}">
+                                            <TextBlock Text="{Binding Name}"/>:
+                                            <TextBlock Text="{Binding Address}"/>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
 
-                            <Button Content="Добавить"/>
-                            <Button Content="Удалить"/>
-                            <Button Content="Редактировать"/>
+                            <Button ToolTip="Добавить" imgSource:Awesome.Content="Solid_Plus"/>
+                            <Button ToolTip="Редактировать" imgSource:Awesome.Content="Solid_Edit"/>
+                            <Button ToolTip="Удалить" imgSource:Awesome.Content="Regular_TrashAlt"/>
                         </ToolBar>
-                        <ToolBar Header="Планировщик">
-                            <Button Content="Запланировать"></Button>
+                        <ToolBar>
+                            <Button Content="Запланировать" ToolTip="Перейти в планировщик"></Button>
                         </ToolBar>
                     </ToolBarTray>
 
 
                     <GroupBox Header="Список получателей" Margin="1" Grid.Row="1">
-                        <DataGrid>
+                        <DataGrid Grid.Row="1" Name="RecipientsList"
+                                  ItemsSource="{x:Static data:TestData.Recipients}"
+                                  AutoGenerateColumns="False"
+                                  GridLinesVisibility="Vertical"
+                                  AlternatingRowBackground="PowderBlue"
+                                  VerticalGridLinesBrush="Gray">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="ID"/>
-                                <DataGridTextColumn Header="Имя" MinWidth="120"/>
-                                <DataGridTextColumn Header="Адрес" MinWidth="150"/>
-                                <DataGridTextColumn Header="Описание" Width="*"/>
+                                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="25"/>
+                                <DataGridTextColumn Header="Имя" MinWidth="100" Binding="{Binding Name}"/>
+                                <DataGridTextColumn Header="Адрес" MinWidth="100" Binding="{Binding Address}"/>
+                                <DataGridTextColumn Header="Описание" Width="*" Binding="{Binding Description}"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </GroupBox>
@@ -160,17 +174,18 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <GroupBox Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Header="Письма">
-                        <ListBox>
-                            <ListBoxItem>Письмо1</ListBoxItem>
-                            <ListBoxItem>Письмо2</ListBoxItem>
-                            <ListBoxItem>Письмо3</ListBoxItem>
+                        <ListBox Name="MessagesList"
+                                 ItemsSource="{x:Static data:TestData.Messages}"
+                                 DisplayMemberPath="Title"
+                                 SelectedIndex="0">
                         </ListBox>
                     </GroupBox>
                     <GroupBox Grid.Column="1" Grid.Row="0" Header="Заголовок">
-                        <TextBox/>
+                        <TextBox Text="{Binding SelectedItem.Title, ElementName=MessagesList}"/>
                     </GroupBox>
                     <GroupBox Grid.Column="1" Grid.Row="1" Header="Тело письма">
-                        <TextBox AcceptsReturn="True" AcceptsTab="True"/>
+                        <TextBox AcceptsReturn="True" AcceptsTab="True"
+                                 Text="{Binding SelectedItem.Body ,ElementName=MessagesList}"/>
                     </GroupBox>
                 </Grid>
             </TabItem>
